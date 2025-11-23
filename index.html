@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <title>Për më të veçantën time – Dea, Denuse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fff5fb;
+      --card: #ffffff;
+      --accent: #ff6fa9;
+      --accent-soft: #ffd4e7;
+      --text: #332233;
+      --muted: #8b6f86;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #ffe4f0 0, #fff5fb 40%, #ffffff 100%);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 245, 251, 0.9);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.8rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .logo-heart {
+      font-size: 1.2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav li a {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    nav li a:hover {
+      background: var(--accent-soft);
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.2rem 3rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+    }
+
+    /* HERO section */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-text h1 {
+      font-family: "Great Vibes", cursive;
+      font-size: 3.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--accent);
+    }
+
+    .hero-text h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--text);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      cursor: default;
+    }
+
+    .denuse-word {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .denuse-word::after {
+      content: "✨";
+      position: absolute;
+      right: -1.1rem;
+      top: -0.15rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 1.4rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "18";
+      position: absolute;
+      font-family: "Great Vibes", cursive;
+      font-size: 5rem;
+      color: rgba(255, 111, 169, 0.09);
+      right: 12px;
+      bottom: -18px;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      background: var(--accent-soft);
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .little-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Music */
+    .music-box {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #ffe4f6, #fff);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      box-shadow: var(--shadow);
+    }
+
+    .music-icon {
+      font-size: 1.7rem;
+    }
+
+    .music-text {
+      flex: 1;
+    }
+
+    .music-text p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .music-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .music-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+    }
+
+    .btn-play {
+      border: none;
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 111, 169, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-play:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(255, 111, 169, 0.4);
+    }
+
+    audio {
+      width: 180px;
+      max-width: 100%;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 1.7rem;
+      font-family: "Great Vibes", cursive;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Letter */
+    .letter-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-card::before {
+      content: "💌";
+      position: absolute;
+      font-size: 3rem;
+      opacity: 0.12;
+      right: 12px;
+      top: 5px;
+    }
+
+    .letter-placeholder {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 0.4rem;
+    }
+
+    .letter-hint {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.9rem;
+    }
+
+    /* QR codes */
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+    }
+
+    .qr-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.4rem;
+    }
+
+    .qr-label {
+      font-size: 0.87rem;
+      font-weight: 600;
+    }
+
+    .qr-caption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      min-height: 2.4em;
+    }
+
+    .qr-box {
+      margin-top: 0.2rem;
+      padding: 0.4rem;
+      border-radius: 14px;
+      background: #fff7fb;
+    }
+
+    .qr-box canvas,
+    .qr-box img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .qr-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.7rem;
+      text-align: center;
+    }
+
+    /* Timeline (mund ta mbushësh me datat e "date"-ve tuaja) */
+    .timeline {
+      border-left: 2px dashed var(--accent-soft);
+      padding-left: 1.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.37rem;
+      top: 0.3rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(255, 111, 169, 0.2);
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .timeline-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Special words */
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .word-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .word-card.special {
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 3px rgba(255, 111, 169, 0.2), var(--shadow);
+    }
+
+    .word-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .word-tagline {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .word-desc {
+      font-size: 0.82rem;
+    }
+
+    .word-card .corner-label {
+      position: absolute;
+      right: -40px;
+      top: 10px;
+      transform: rotate(20deg);
+      font-size: 0.8rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.1rem 1.4rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 10px rgba(255, 111, 169, 0.4);
+    }
+
+    .word-card .corner-label.secondary {
+      background: #ffa6c9;
+    }
+
+    /* Gift box */
+    .gift-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .gift-box-btn {
+      margin-top: 0.6rem;
+      border: none;
+      border-radius: 16px;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff6fa9, #ff9fc8);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 111, 169, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .gift-box-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(255, 111, 169, 0.55);
+    }
+
+    .gift-box-btn span {
+      font-size: 1.3rem;
+    }
+
+    .gift-content {
+      margin-top: 0.9rem;
+      display: none;
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    .gift-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .gift-item {
+      min-width: 110px;
+      padding: 0.6rem 0.7rem;
+      border-radius: 14px;
+      background: #fff7fb;
+      font-size: 0.8rem;
+    }
+
+    .gift-item-emoji {
+      font-size: 1.4rem;
+    }
+
+    .gift-item-label {
+      font-weight: 600;
+      margin-top: 0.1rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .gift-item-text {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    /* Secret page / Hidden section */
+    .secret-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.5rem;
+      box-shadow: var(--shadow);
+      margin-top: 1rem;
+    }
+
+    .secret-input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.7rem;
+    }
+
+    .secret-input-row input {
+      flex: 1;
+      min-width: 150px;
+      padding: 0.4rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid #f3c2dd;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    .secret-input-row button {
+      border-radius: 999px;
+      border: none;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(255, 111, 169, 0.4);
+    }
+
+    .secret-hint {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
+    .secret-message {
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .secret-message.ok {
+      color: #1b8c4a;
+    }
+
+    .secret-message.error {
+      color: #d0254f;
+    }
+
+    .secret-content {
+      margin-top: 1rem;
+      display: none;
+      animation: fadeInUp 0.4s ease-out;
+    }
+
+    /* Intro overlay */
+    .intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: radial-gradient(circle at top, #ffb8d8 0, #ff6fa9 45%, #2b1024 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 1.5rem;
+    }
+
+    .intro-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .intro-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .intro-video {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
+    }
+
+    .intro-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: #fff;
+      color: #c02f6f;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .intro-btn span {
+      font-size: 1.2rem;
+    }
+
+    .intro-fade {
+      animation: fadeOut 0.6s ease forwards;
+    }
+
+    /* Stars */
+    .star {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 8px rgba(255, 111, 169, 0.9);
+      pointer-events: none;
+      z-index: 1200;
+      animation: fall 1.2s linear forwards;
+    }
+
+    /* Animations */
+    @keyframes fall {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(80vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #f5d7e7;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    footer .birthday {
+      font-family: "Great Vibes", cursive;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    footer .mini {
+      font-size: 0.8rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 2.4rem;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 0.2rem;
+        align-items: flex-start;
+      }
+      nav ul {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+      .music-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .music-controls {
+        width: 100%;
+        align-items: flex-start;
+      }
+      audio {
+        width: 100%;
+      }
+      .intro-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body class="no-scroll">
+  <!-- INTRO OVERLAY: "Hi, Denuse" + video -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro-title">Hi, Feniks. 💖</div>
+    <div class="intro-subtitle">
+      Kjo faqe është një dhuratë e vogël për 18 vjetorin tënd.  
+      Një vend ku ruhen kujtimet tona, fjalët tona dhe ti.
+    </div>
+
+    <!--
+      VENDOS KËTU VIDEON TËNDE TË SHKURTËR (intro).  
+      ZËVENDËSO "intro.mp4" ME EMRIN/URL-NË E VIDEOS TËNDE.
+    -->
+    <video class="intro-video" id="introVideo" controls>
+      <source src="18th.mp4" type="video/mp4" />
+      Shfletuesi yt nuk e mbështet videon.
+    </video>
+
+    <button class="intro-btn" id="enterSiteBtn">
+      <span>🎁</span> Hape dhuratën
+    </button>
+  </div>
+
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <span class="logo-heart">❤️</span>
+        <span>My Deushe</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#top">Kreu</a></li>
+          <li><a href="#letter">Letra ime për ty</a></li>
+          <li><a href="#qrcodes">Kodet tona</a></li>
+          <li><a href="#memories">Momentet</a></li>
+          <li><a href="#words">Denuse & Feniks</a></li>
+          <li><a href="#secret">Sekreti</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO / INTRO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Për më të veçantën time</h2>
+        <h1>Dea, <span class="denuse-word">Denusja</span> ime</h1>
+        <p>
+          Kjo faqe është vetëm për ty. Për arushën time, për ajdiotin tim të preferuar,
+          për Feniksin tim gjithmonë më e fortë dhe më e bukur.
+          Kjo është dhurata ime e vogël për 18 vjetorin tënd, për të treguar
+          sa shumë kuptojnë për mua të gjitha momentet tona.
+        </p>
+        <div class="tags">
+          <span class="tag">My Deushe</span>
+          <span class="tag">arushë 🤍</span>
+          <span class="tag">ajdiot 😂</span>
+          <span class="tag denuse-word">Denuse ✨</span>
+          <span class="tag">Feniks 🔥</span>
+        </div>
+
+        <!-- MUSIC -->
+        <div class="music-box">
+          <div class="music-icon">🎻</div>
+          <div class="music-text">
+            <div class="music-title">Melodia jote, violinistja ime</div>
+            <p>
+              Ti ke luajtur violinë dhe nuk ka asgjë më të bukur se të mendoj
+              zërin tënd dhe tingujt e violinës në sfond.
+            </p>
+          </div>
+          <div class="music-controls">
+            <!-- VENDOS KËTU KËNGËN TËNDE (MP3) -->
+            <audio id="deaSong" controls>
+              <!-- ZËVENDËSO "song.mp3" ME EMRIN/URL-NË E KËNGËS TËNDE -->
+              <source src="song.mp3" type="audio/mpeg" />
+              Shfletuesi yt nuk e mbështet audio.
+            </audio>
+            <button class="btn-play" onclick="document.getElementById('deaSong').play()">
+              ▶ Luaj për Dea-n
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="date-pill">
+          🎂 23 Nëntor 2025 • 18 vjeç
+        </div>
+        <h3>Për ty, që e bën çdo ditë më të veçantë</h3>
+        <p>
+          Kjo nuk është thjesht një faqe interneti.
+          Është një album i fshehtë me QR kode, foto, kujtime dhe fjalë që ekzistojnë
+          vetëm për ne të dy.
+        </p>
+        <p class="little-note">
+          Skanon kodet, shiko fotot, dhe kujtohu se çdo buzëqeshje e jotja
+          është arsyeja pse zemra ime thotë:
+          <b class="denuse-word">Denuse</b>.
+        </p>
+      </div>
+    </section>
+
+    <!-- LETTER SECTION -->
+    <section id="letter">
+      <h2 class="section-title">My letter to you</h2>
+      <p class="section-subtitle">
+        Fjalët që nuk të i them gjithmonë me zë, por që i ndjej çdo ditë. 💌
+      </p>
+      <div class="letter-card">
+        Urime ditelindjen zemeeerrrrrr ❤️❤️❤️. Ti uroj krejt ma tmirat e botes per ty si njeri ma i mir nket planet. 23 nentori prej 2007 osht ni dit e veqant nkalendar, osht dita kur ka le energjia pozitive edhe lumturia e shuuuuum njerzve. Qetash u bo hera e 18 qe po vjen prap kjo dit e perndryshe prej tjerave ket her un jom pjes e saj, ndihem shuuummmmm i lumtur edhe krenar qe tkom pjes tpandashme te jetes te jam shuuum falenderusss qe je gjithhh e mir edhe e kujdesshme edhe ma shkurt ma e mira nbotttt. Te dua shumee arush. Tdu per energjin. Tdu per lumturin qe ma jep. Tdu se mbon mu ni mir. Tdu se je ma e mira. Tdu se je e bukur. Tdu se je e sjellshme. Tdu se mshtish me te dasht. Te du pamaseee ❤️
+
+Thuaj yjet s'jane zjarr,
+
+Thuaj dielli u shua, 
+
+Thuaj jeta eshtë varr,
+
+Po mos thuaj ge s'të dua.
+
+❤️❤️❤️❤️❤️❤️❤️❤️❤️
+      
+      </div>
+    </section>
+
+    <!-- QR CODES SECTION -->
+    <section id="qrcodes">
+      <h2 class="section-title">Kodet tona të vogla sekrete</h2>
+      <p class="section-subtitle">
+        Skanon një kod &rarr; shfaqet një foto vetëm e jona.  
+      </p>
+
+      <div class="qr-grid">
+        <!-- 1 -->
+        <div class="qr-card">
+         <div class="qr-label">Foto #1 – </div>
+         <!--  <div class="qr-caption">Aty ku gjithçka nisi, edhe pse nuk e dinim akoma.</div> -->
+          <div class="qr-box"><div id="qr1"></div></div>
+        </div>
+        <!-- 2 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #2 – </div>
+          <!-- <div class="qr-caption">Kur dukeshe si arushë dhe unë s’kisha më shpresë të mos bie në dashuri.</div> -->
+          <div class="qr-box"><div id="qr2"></div></div>
+        </div>
+        <!-- 3 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #3 – </div>
+          <!--<div class="qr-caption">Momenti ku qeshëm aq shumë sa harruam gjithçka tjetër.</div> -->
+          <div class="qr-box"><div id="qr3"></div></div>
+        </div>
+        <!-- 4 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #4 – </div>
+          <!--<div class="qr-caption">Ato ditë kur s’ishte lehtë, por ti u bëre Feniks.</div>-->
+          <div class="qr-box"><div id="qr4"></div></div>
+        </div>
+        <!-- 5 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #5 – </div>
+          <!--<div class="qr-caption">Foto që meriton fjalën tënde të preferuar: Denuse. ✨</div>-->
+          <div class="qr-box"><div id="qr5"></div></div>
+        </div>
+        <!-- 6 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #6 – </div>
+         <!--<div class="qr-caption">Ato buzëqeshje që s’i kam parë te askush tjetër.</div>-->
+          <div class="qr-box"><div id="qr6"></div></div>
+        </div>
+        <!-- 7 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #7 – </div>
+          <!--<div class="qr-caption">Kur ti, violinistja, ishe melodia më e bukur.</div>-->
+          <div class="qr-box"><div id="qr7"></div></div>
+        </div>
+        <!-- 8 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #8 – </div>
+          <!--<div class="qr-caption">Ecjet tona pa destinacion, por gjithmonë me njëri-tjetrin.</div>-->
+          <div class="qr-box"><div id="qr8"></div></div>
+        </div>
+        <!-- 9 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #9 – </div>
+          <!--<div class="qr-caption">Sepse edhe të lodhur, jemi të bukur bashkë.</div>-->
+          <div class="qr-box"><div id="qr9"></div></div>
+        </div>
+        <!-- 10 -->
+        <div class="qr-card">
+          <div class="qr-label">Foto #10 – </div>
+         <!-- <div class="qr-caption">Një foto që tregon se ku mund të jemi pas disa vitesh.</div> -->
+          <div class="qr-box"><div id="qr10"></div></div>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <!-- GIFT BOX SECTION -->
+    <section id="gift">
+      <h2 class="section-title">Kutia jonë e dhuratës</h2>
+      <p class="section-subtitle">
+        Një kuti virtuale me disa gjëra që të përfaqësojnë ty, mua dhe ne.
+      </p>
+
+      <div class="gift-card">
+        <p>
+          Brenda kësaj kutie ka gjëra që nuk blihen:  
+          kujtime, simbole dhe versione të vegjël të nesh.
+        </p>
+        <button class="gift-box-btn" id="giftBoxBtn">
+          <span>🎁</span> Hape kutinë, arushë
+        </button>
+
+        <div class="gift-content" id="giftContent">
+          <p style="font-size:0.85rem; color:var(--muted);">
+            Ja çfarë fsheh kjo kuti për ty:
+          </p>
+          <div class="gift-items">
+            <div class="gift-item">
+              <div class="gift-item-emoji">🎻</div>
+              <div class="gift-item-label">Violina</div>
+              <div class="gift-item-text">
+                shumë vite punë, nerva, prova dhe bukuri.  
+                Vërtetim që ti je <span class="denuse-word">Denuse</span>.
+              </div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-item-emoji">🧸</div>
+              <div class="gift-item-label">Arushë</div>
+              <div class="gift-item-text">
+                Ti kur je e butë, e përqafueshme dhe dua të të mbaj pranë.
+              </div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-item-emoji">🔥</div>
+              <div class="gift-item-label">Feniks</div>
+              <div class="gift-item-text">
+                Ti kur i mbijeton çdo gjëje dhe ngrihesh më e fortë se më parë.
+              </div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-item-emoji">😂</div>
+              <div class="gift-item-label">Ajdiot</div>
+              <div class="gift-item-text">
+                Budallallëqet tona të bukura, memet, batutat – pjesa më qesharake e dashurisë.
+              </div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-item-emoji">📸</div>
+              <div class="gift-item-label">Kujtimet</div>
+              <div class="gift-item-text">
+                Të gjitha fotot që skanon më lart. Secila prej tyre është një “po” i vogël midis nesh.
+              </div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-item-emoji">💗</div>
+              <div class="gift-item-label"><span class="denuse-word">Denuse</span></div>
+              <div class="gift-item-text">
+                Fjala jonë. E ruajtur këtu brenda, por mbi të gjitha, në zemër.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORIES / TIMELINE (MBUSHE ME DATAT E "DATE"-VE TUAJA) -->
+    <section id="memories">
+      <h2 class="section-title">Momentet tona</h2>
+      <p class="section-subtitle">
+        Këtu mund të shkruash datat e "date"-ve tona dhe kujtimet për secilën.
+      </p>
+
+      <div class="timeline">
+        <!--
+          ZËVENDËSO KËTO SHEMBUJ ME DATAT E VËRTETA.
+          P.SH:
+          14.02.2023 – Date e parë
+        -->
+        <div class="timeline-item">
+          <div class="timeline-title">Date 1 – (25.05.2025)</div>
+          <div class="timeline-text">
+            Hera e parëëëë bashkkkkk. Jemi knaqqqq
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-title">Date 11 – (24.08.2025)</div>
+          <div class="timeline-text">
+            Dita ma e mire e jonaaa bashkk najheeer. Dita e lidhjesss.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-title">Date 20 – (23.11.2025)</div>
+          <div class="timeline-text">
+            Ditlindja joteee. Dite pak ma e mire se ajo e lidhjes.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL WORDS: DENUSE, FENIKS, ARUSHË, AJDIOT -->
+    <section id="words">
+      <h2 class="section-title">Fjalët tona speciale</h2>
+      <p class="section-subtitle">
+        Disa fjalë nuk ekzistojnë në fjalor. Ekzistojnë vetëm për ne.
+      </p>
+
+      <div class="words-grid">
+        <!-- Denuse -->
+        <div class="word-card special">
+          <div class="corner-label">#1 favorite</div>
+          <div class="word-name denuse-word">Denuse</div>
+          <div class="word-tagline">Fjala jonë e shenjtë ✨</div>
+          <div class="word-desc">
+            <b>Denuse</b> nuk është thjesht një fjalë.  
+            Është mënyra se si unë të shoh: e veçantë, unike, ajo që s’krahasohet me askënd.
+            Sa herë e them, e di që po flas për ty, për Dea-n time.
+          </div>
+        </div>
+
+        <!-- Feniks -->
+        <div class="word-card">
+          <div class="corner-label secondary">#2 favorite</div>
+          <div class="word-name">Feniks</div>
+          <div class="word-tagline">Ti, kur e mund botën</div>
+          <div class="word-desc">
+            <b>Feniks</b> je ti kur bie, lodhesh, por çdo herë kthehesh edhe më e fortë.
+            Edhe kur mendon se s’ke fuqi, unë të shoh si Feniks dhe e di që do të ngrihesh sërish.
+          </div>
+        </div>
+
+        <!-- Arushë -->
+        <div class="word-card">
+          <div class="word-name">Arushë</div>
+          <div class="word-tagline">Puthjet & përqafimet</div>
+          <div class="word-desc">
+            <b>Arushë</b> je kur përqafohesh fort, kur dukesh kaq e ëmbël sa nuk dua të të lëshoj.
+            Është versioni yt më i butë, më i dashur, ai që mbaj mend para gjumit.
+          </div>
+        </div>
+
+        <!-- Ajdiot -->
+        <div class="word-card">
+          <div class="word-name">Ajdiot</div>
+          <div class="word-tagline">Budallallëqet tona të bukura</div>
+          <div class="word-desc">
+            <b>Ajdiot</b> është fjala jonë kur bëjmë budallallëqe, por në mënyrën më të
+            ëmbël të mundshme. Kjo fjalë më bën të qesh, sepse tregon se sa rehat
+            jemi me njëri-tjetrin.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECRET PAGE: UNLOCKED ONLY WITH "Denuse" -->
+    <section id="secret">
+      <h2 class="section-title">Faqja jonë sekrete</h2>
+      <p class="section-subtitle">
+        Kjo faqe hapet vetëm me një fjalë që vetëm ne e dimë vërtet.
+      </p>
+
+      <div class="secret-card">
+        <p style="font-size:0.9rem;">
+          Shkruaje fjalën që është më e rëndësishmja për ne të dy.
+        </p>
+        <div class="secret-input-row">
+          <input type="password" id="secretInput" placeholder="Shkruaj këtu fjalën sekrete..." />
+          <button id="secretBtn">Hape sekretin</button>
+        </div>
+        <div class="secret-hint">
+          (Shenjë e vogël: është fjala jote e preferuar. 😉)
+        </div>
+        <div class="secret-message" id="secretMessage"></div>
+
+        <div class="secret-content" id="secretContent">
+          <!--
+            KËTU MUND TË VESH DICKA SUPER TË VEÇANTË:
+            - Një mesazh shumë personal
+            - Një link video
+            - Një foto e veçantë
+          -->
+          <p style="font-size:0.95rem;">
+            Nëse po e lexon këtë… do të thotë që e shkrove saktë <b>Denuse</b>.  
+            Kjo pjesë e faqes është vetëm për ty:
+          </p>
+          <ul style="font-size:0.85rem; margin-top:0.5rem; color:var(--muted); padding-left:1.1rem;">
+            <img src="IMG.jpeg" style="width: 300px; height: 250px;"  alt="">
+            <li>TE DUA PAMASE 💖💖💖💖💖💖💖</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="birthday">Gëzuar 18 vjetorin, Dea. 💖</div>
+      <div class="mini">
+        Me dashuri, nga ai që gjithmonë do të të quajë
+        <b class="denuse-word">Denuse</b>, arushë, ajdiot dhe Feniks në të njëjtën kohë.
+      </div>
+    </footer>
+  </main>
+
+  <!-- QRCode.js CDN (për të gjeneruar QR kodet në browser) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    // Lista e fotove – ZËVENDËSO KËTO LINK-E ME LINK-ET E FOTOVE TUAJA
+    const photoLinks = [
+      { id: "qr1", url: "https://drive.google.com/file/d/1qaorJQBfU55tPLnsUL8H26Lv-v3KjFt_/view?usp=drive_link" },
+      { id: "qr2", url: "https://drive.google.com/file/d/18if57Vdxeays9wYyRrG9yzC9o0P2l30Z/view?usp=sharing" },
+      { id: "qr3", url: "https://drive.google.com/file/d/1oFzkxaOk5nyZTLeNI2izEO7u-PiFXTHi/view?usp=sharing" },
+      { id: "qr4", url: "https://drive.google.com/file/d/1rlS4IIZOQHiZWTwexNOLdX3bOK-II4YJ/view?usp=sharing" },
+      { id: "qr5", url: "https://drive.google.com/file/d/1QaN2E592rmG0e3xo-_iwhbcjnD8TU5KS/view?usp=sharing" },
+      { id: "qr6", url: "https://drive.google.com/file/d/1BgzN7gYC0zORWVC7oMeK6oSzNuLM071b/view?usp=sharing" },
+      { id: "qr7", url: "https://drive.google.com/file/d/1wsi6BXlU_Lo2pC6iL-KlPWcPpVSU-9IH/view?usp=sharing" },
+      { id: "qr8", url: "https://drive.google.com/file/d/1DX7nJSgDygtGXcdkYWXn7XhomeY6F3J6/view?usp=sharing" },
+      { id: "qr9", url: "https://drive.google.com/file/d/1XjJ8xFDBbU7VbidtWEI8Jgkh8dpE8aQ-/view?usp=sharing" },
+      { id: "qr10", url: "https://drive.google.com/file/d/1kOAgMdh_sl5a6Q8hFgNdJa4T-lWXj74I/view?usp=sharing" },
+    ];
+
+    // Funksioni për të krijuar yje që bien (starfall)
+    function triggerStars(count = 20) {
+      for (let i = 0; i < count; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = 3 + Math.random() * 4;
+        star.style.width = size + "px";
+        star.style.height = size + "px";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = (5 + Math.random() * 20) + "vh";
+        document.body.appendChild(star);
+
+        star.addEventListener("animationend", () => {
+          star.remove();
+        });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Gjenero QR kodet
+      photoLinks.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (!el || !item.url) return;
+        new QRCode(el, {
+          text: item.url,
+          width: 128,
+          height: 128,
+        });
+      });
+
+      // Smooth scroll për navigim
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Event për të gjitha fjalët "Denuse"
+      document.querySelectorAll(".denuse-word").forEach((el) => {
+        el.addEventListener("click", () => triggerStars(25));
+      });
+
+      // Gift box hapje / mbyllje
+      const giftBtn = document.getElementById("giftBoxBtn");
+      const giftContent = document.getElementById("giftContent");
+      if (giftBtn && giftContent) {
+        giftBtn.addEventListener("click", () => {
+          const isVisible = giftContent.style.display === "block";
+          giftContent.style.display = isVisible ? "none" : "block";
+          triggerStars(15);
+        });
+      }
+
+      // Secret page unlock me fjalën "Denuse"
+      const secretBtn = document.getElementById("secretBtn");
+      const secretInput = document.getElementById("secretInput");
+      const secretMessage = document.getElementById("secretMessage");
+      const secretContent = document.getElementById("secretContent");
+
+      if (secretBtn && secretInput && secretMessage && secretContent) {
+        secretBtn.addEventListener("click", () => {
+          const value = (secretInput.value || "").trim().toLowerCase();
+          if (value === "denuse") {
+            secretMessage.textContent = "Sekreti u hap. Normal, ti je Denuse.";
+            secretMessage.className = "secret-message ok";
+            secretContent.style.display = "block";
+            triggerStars(35);
+          } else {
+            secretMessage.textContent = "Hmm… kjo nuk është fjala jonë. Provo edhe një herë.";
+            secretMessage.className = "secret-message error";
+            secretContent.style.display = "none";
+          }
+        });
+
+        // Lejo ENTER për të hapur sekretin
+        secretInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            secretBtn.click();
+          }
+        });
+      }
+
+      // Intro overlay: hiqet kur klikojmë "Hape dhuratën"
+      const overlay = document.getElementById("introOverlay");
+      const enterBtn = document.getElementById("enterSiteBtn");
+      const introVideo = document.getElementById("introVideo");
+
+      if (overlay && enterBtn) {
+        enterBtn.addEventListener("click", () => {
+          overlay.classList.add("intro-fade");
+          document.body.classList.remove("no-scroll");
+          triggerStars(40);
+          // Opsionale: ndalo videon
+          if (introVideo && !introVideo.paused) {
+            introVideo.pause();
+          }
+          setTimeout(() => {
+            overlay.style.display = "none";
+          }, 650);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
